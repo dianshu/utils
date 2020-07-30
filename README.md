@@ -21,3 +21,6 @@
 ### 依赖
 1. Python 库
     - `pip install bs4`
+    
+## build_catalog
+根据当前目录结构，使用 MarkDown 语法生成对应的有层级关系的列表
