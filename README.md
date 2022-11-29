@@ -21,6 +21,11 @@
 ### 依赖
 1. Python 库
     - `pip install bs4`
-    
+
 ## build_catalog
 根据当前目录结构，使用 MarkDown 语法生成对应的有层级关系的列表
+
+## setup_distcc_and_ccache
+
+### 用途
+初始化 Ubuntu 的 distcc 和 ccache，用于加速编译
