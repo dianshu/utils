@@ -14,10 +14,11 @@ homedir="/home/$username"
 echo /usr/lib/ccache/g++ > $homedir/distcc_cmdlist.cfg
 echo /usr/lib/ccache/gcc >> $homedir/distcc_cmdlist.cfg
 
-echo "export DISTCC_CMDLIST=$homedir/distcc_cmdlist.cfg" >> $homedir/.bashrc
-echo "export CCACHE_DIR=$homedir/.ccache" >> $homedir/.bashrc
+cat > $username/run.sh << EOF
+#!/bin/bash
+export DISTCC_CMDLIST="$homedir/distcc_cmdlist.cfg"
+export CCACHE_DIR=$homedir/.ccache
 
-cat > run.sh << EOF
 distccd \\
     --daemon \\
     --no-detach \\
@@ -29,5 +30,7 @@ distccd \\
     --listen "0.0.0.0" \\
     --allow "0.0.0.0/0" \\
     --nice 5 \\
-    --jobs 2
+    --jobs 4
 EOF
+
+chmod 777 $username/run.sh
