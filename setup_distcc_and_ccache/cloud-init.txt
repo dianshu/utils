@@ -1,0 +1,34 @@
+#cloud-config
+packages:
+  - g++
+  - gcc
+  - distcc
+  - ccache
+package_update: true
+write_files:
+  - content: |
+      /usr/lib/ccache/g++
+      /usr/lib/ccache/gcc
+    owner: root:root
+    path: /app/distcc/distcc_cmdlist.cfg
+    permissions: '0777'
+  - content: |
+      #!/bin/bash
+      export DISTCC_CMDLIST=/app/distcc/distcc_cmdlist.cfg
+      export CCACHE_DIR=/app/distcc/.ccache
+
+      exec distccd \
+        --daemon \
+        --no-detach \
+        --port 3632 \
+        --stats \
+        --stats-port 3633 \
+        --log-stderr \
+        --listen "0.0.0.0" \
+        --allow "0.0.0.0/0" \
+        --nice 5 \
+        --jobs 4 \
+        --log-file=/app/distcc/distcc.log
+    owner: root:root
+    path: /var/lib/cloud/scripts/per-boot/distcc.sh
+    permissions: '0777'
