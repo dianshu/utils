@@ -10,6 +10,7 @@ users:
   groups: users, admin
   sudo: ALL=(ALL) NOPASSWD:ALL
   shell: /bin/bash
+  plain_text_passwd: {password}
 write_files:
   - content: |
       /usr/lib/ccache/g++
@@ -29,12 +30,11 @@ write_files:
         --user "distcc" \
         --stats \
         --stats-port 3633 \
-        --log-stderr \
         --listen "0.0.0.0" \
         --allow "0.0.0.0/0" \
         --nice 5 \
         --jobs 8 \
-        --log-level debug
+        --log-level debug \
         --log-file=/home/distcc/distcc.log
     owner: distcc:distcc
     path: /home/distcc/distcc.sh
