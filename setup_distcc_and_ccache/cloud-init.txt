@@ -18,9 +18,11 @@ write_files:
     path: /home/distcc/distcc_cmdlist.cfg
     defer: true
   - content: |
+      cache_dir=/home/distcc/.ccache
+    path: /etc/ccache.conf
+  - content: |
       #!/bin/bash
       export DISTCC_CMDLIST=/home/distcc/distcc_cmdlist.cfg
-      export CCACHE_DIR=/home/distcc/.ccache
 
       exec distccd \
         --daemon \
