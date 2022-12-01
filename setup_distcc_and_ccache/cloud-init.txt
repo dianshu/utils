@@ -5,30 +5,39 @@ packages:
   - distcc
   - ccache
 package_update: true
+users:
+- name: distcc
+  groups: users, admin
+  sudo: ALL=(ALL) NOPASSWD:ALL
+  shell: /bin/bash
 write_files:
   - content: |
       /usr/lib/ccache/g++
       /usr/lib/ccache/gcc
-    owner: root:root
-    path: /app/distcc/distcc_cmdlist.cfg
-    permissions: '0777'
+    owner: distcc:distcc
+    path: /home/distcc/distcc_cmdlist.cfg
+    defer: true
   - content: |
       #!/bin/bash
-      export DISTCC_CMDLIST=/app/distcc/distcc_cmdlist.cfg
-      export CCACHE_DIR=/app/distcc/.ccache
+      export DISTCC_CMDLIST=/home/distcc/distcc_cmdlist.cfg
+      export CCACHE_DIR=/home/distcc/.ccache
 
       exec distccd \
         --daemon \
         --no-detach \
         --port 3632 \
+        --user "distcc" \
         --stats \
         --stats-port 3633 \
         --log-stderr \
         --listen "0.0.0.0" \
         --allow "0.0.0.0/0" \
         --nice 5 \
-        --jobs 4 \
-        --log-file=/app/distcc/distcc.log
-    owner: root:root
-    path: /var/lib/cloud/scripts/per-boot/distcc.sh
-    permissions: '0777'
+        --jobs 8 \
+        --log-level debug
+        --log-file=/home/distcc/distcc.log
+    owner: distcc:distcc
+    path: /home/distcc/distcc.sh
+    defer: true
+runcmd:
+    - [ ln, /home/distcc/distcc.sh, /var/lib/cloud/scripts/per-boot/distcc.sh ]
