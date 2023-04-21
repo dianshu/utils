@@ -40,6 +40,6 @@
 
 ### 用法
 1. Create a vm
-    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/master/create_vm_for_science.sh)`
+    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/master/create_vm_for_science.sh?${RANDOM})`
 2. Install software in vm
     - `bash <(curl -sL https://raw.githubusercontent.com/hiifeng/v2ray/main/install_v2ray.sh)`
