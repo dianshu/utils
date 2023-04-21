@@ -73,7 +73,7 @@ az network nsg rule create \
      --destination-address-prefix '*' \
      --destination-port-range 34512 \
      --access allow \
-     --priority 200
+     --priority 201
 
   az network nsg rule create \
     --resource-group $RESOURCE_GROUP \
