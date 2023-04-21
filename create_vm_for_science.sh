@@ -38,7 +38,7 @@ az network public-ip create \
     --version IPv4 \
     --zone 1 2 3
 
-  az network public-ip create \
+az network public-ip create \
     --resource-group $RESOURCE_GROUP \
     --name $PUBLIC_IPV6_NAME \
     --sku Standard \
@@ -63,19 +63,32 @@ az network nsg rule create \
     --priority 200
 
 az network nsg rule create \
-     --resource-group $RESOURCE_GROUP \
-     --nsg-name $NSG_NAME \
-     --name NSGRuleSSH34512 \
-     --protocol '*' \
-     --direction inbound \
-     --source-address-prefix '*' \
-     --source-port-range '*' \
-     --destination-address-prefix '*' \
-     --destination-port-range 34512 \
-     --access allow \
-     --priority 201
+    --resource-group $RESOURCE_GROUP \
+    --nsg-name $NSG_NAME \
+    --name NSGRule34512 \
+    --protocol '*' \
+    --direction inbound \
+    --source-address-prefix '*' \
+    --source-port-range '*' \
+    --destination-address-prefix '*' \
+    --destination-port-range 34512 \
+    --access allow \
+    --priority 201
+     
+az network nsg rule create \
+    --resource-group $RESOURCE_GROUP \
+    --nsg-name $NSG_NAME \
+    --name NSGRule443 \
+    --protocol '*' \
+    --direction inbound \
+    --source-address-prefix '*' \
+    --source-port-range '*' \
+    --destination-address-prefix '*' \
+    --destination-port-range 443 \
+    --access allow \
+    --priority 202
 
-  az network nsg rule create \
+az network nsg rule create \
     --resource-group $RESOURCE_GROUP \
     --nsg-name $NSG_NAME \
     --name NSGRuleAllOUT \
