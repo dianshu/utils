@@ -43,3 +43,12 @@
     - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/master/create_vm_for_science.sh)`
 2. Install software in vm
     - `bash <(curl -sL https://raw.githubusercontent.com/hiifeng/v2ray/main/install_v2ray.sh)`
+  
+## xiaohongshu
+
+### 用途
+清洗后裔采集器采集到的原始数据
+
+### 依赖
+1. Python 库
+    - `pip install openpyxl`
