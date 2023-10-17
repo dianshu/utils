@@ -29,13 +29,19 @@ class Record:
     def clean_number(number):
         number = str(number)
         number = number.strip()
+        number = number.rstrip('+')
+        
+        factor = 1
         if number.endswith('w'):
+            factor = 10000
             number = number[:-1]
-            number = float(number)
-            number = number * 10000
-            number = int(number)
-        else:
-            number = int(number)
+        elif number.endswith('k'):
+            factor = 10000
+            number = number[:-1]
+
+        number = float(number)
+        number = number * factor
+        number = int(number)
         return number
 
     @staticmethod
@@ -53,7 +59,7 @@ class Record:
 
 
 def main():
-    src_wb = openpyxl.load_workbook('src.xlsx')
+    src_wb = openpyxl.load_workbook('src1.xlsx', data_only=True, rich_text=True)
     src_sheet = src_wb.active
 
     # Get the column names and indices
