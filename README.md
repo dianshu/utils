@@ -40,9 +40,11 @@
 
 ### 用法
 1. Create a vm
-    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/master/create_vm_for_science.sh)`
+    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/create_vm_for_science.sh)`
 2. Install software in vm
     - `bash <(curl -sL https://raw.githubusercontent.com/hiifeng/v2ray/main/install_v2ray.sh)`
+3. Update or init domain
+    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/update_or_init_domain.sh)`
   
 ## xiaohongshu
 
