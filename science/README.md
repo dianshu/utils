@@ -12,3 +12,16 @@
 
 ## Setup
 [233boy/v2ray](https://github.com/233boy/v2ray)
+```bash
+# install v2ray
+bash <(wget -qO- -o- https://git.io/v2ray.sh)
+
+# enable bbr
+v2ray bbr
+
+# enable kcp tp accelerate network
+v2ray add kcp
+
+# enable VLESS-H2-TLS
+v2ray add vh2
+```
