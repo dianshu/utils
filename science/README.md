@@ -9,3 +9,6 @@
 
 ## Android APP
 [v2rayNG](https://github.com/2dust/v2rayNG)
+
+## Setup
+[Doc](https://github.com/233boy/v2ray)
