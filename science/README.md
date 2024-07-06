@@ -24,4 +24,8 @@ v2ray add kcp
 
 # enable VLESS-H2-TLS
 v2ray add vh2
+
+# auto restart vm weekly
+# 0 2 * * 0 /sbin/shutdown -r now
+crontab -e
 ```
