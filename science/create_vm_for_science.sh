@@ -138,9 +138,10 @@ az vm create \
     --resource-group $RESOURCE_GROUP \
     --name $VM_NAME \
     --nics $NIC_NAME \
-    --image UbuntuLTS \
     --admin-username $VM_USER \
     --authentication-type ssh \
     --generate-ssh-keys \
     --image $VM_IMAGE \
     --size Standard_D2ds_v5
+
+echo "Cmd to login: ssh $VM_USER@{PublicIP}"
