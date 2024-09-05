@@ -142,4 +142,5 @@ az vm create \
     --admin-username $VM_USER \
     --authentication-type ssh \
     --generate-ssh-keys \
-    --image $VM_IMAGE
+    --image $VM_IMAGE \
+    --size Standard_D2ds_v5
