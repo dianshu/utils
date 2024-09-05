@@ -19,9 +19,6 @@ bash <(wget -qO- -o- https://git.io/v2ray.sh)
 # enable bbr
 v2ray bbr
 
-# enable kcp tp accelerate network
-v2ray add kcp
-
 # enable VLESS-H2-TLS
 v2ray add vh2
 
