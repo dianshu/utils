@@ -117,13 +117,13 @@ az network nic create \
     --public-ip-address $PUBLIC_IPV4_NAME
 
 # create vm
-password=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 8`
+password=`head /dev/urandom | tr -dc A-Za-z0-9.,[] | head -c 50`
 public_ip=`az vm create \
     --resource-group $RESOURCE_GROUP \
     --name $VM_NAME \
     --nics $NIC_NAME \
     --admin-username $VM_USER \
-    --admin-password $password
+    --admin-password $password \
     --authentication-type password \
     --image $VM_IMAGE \
     --size Standard_D2ds_v5 \
