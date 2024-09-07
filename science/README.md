@@ -16,14 +16,17 @@
 # create vm
 bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/create_vm_for_science.sh)
 
-# install v2ray
-bash <(wget -qO- -o- https://git.io/v2ray.sh)
+# install v2ray using sing-box
+bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)
 
 # enable bbr
 v2ray bbr
 
-# enable VLESS-H2-TLS
-v2ray add vh2
+# enable VLESS-HTTP2-REALITY
+sb add rh2
+
+# remove default protocal
+sb del reality
 
 # auto restart vm weekly
 # 0 2 * * 0 /sbin/shutdown -r now
