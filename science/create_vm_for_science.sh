@@ -54,19 +54,6 @@ az network nsg rule create \
     --destination-port-range 22 \
     --access allow \
     --priority 200
-
-az network nsg rule create \
-    --resource-group $RESOURCE_GROUP \
-    --nsg-name $NSG_NAME \
-    --name NSGRule34512 \
-    --protocol '*' \
-    --direction inbound \
-    --source-address-prefix '*' \
-    --source-port-range '*' \
-    --destination-address-prefix '*' \
-    --destination-port-range 34512 \
-    --access allow \
-    --priority 201
      
 az network nsg rule create \
     --resource-group $RESOURCE_GROUP \
@@ -132,3 +119,19 @@ public_ip=`az vm create \
 
 echo "Cmd to login: ssh $VM_USER@$public_ip"
 echo "password: $password"
+
+cat <<EOF
+Cmd to add inbound rule:
+az network nsg rule create \
+    --resource-group $RESOURCE_GROUP \
+    --nsg-name $NSG_NAME \
+    --name NSGRule34512 \
+    --protocol '*' \
+    --direction inbound \
+    --source-address-prefix '*' \
+    --source-port-range '*' \
+    --destination-address-prefix '*' \
+    --destination-port-range 34512 \
+    --access allow \
+    --priority 201
+EOF
