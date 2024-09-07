@@ -1,12 +1,12 @@
 #!/bin/bash
 # reference: https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/create-vm-dual-stack-ipv6-cli
 
-RESOURCE_GROUP="ipv6"
+UNIQUE_ID=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 8`
+RESOURCE_GROUP="tool-$UNIQUE_ID"
 LOCATION="SoutheastAsia"
 VNET_NAME="ipv6-vnet"
 SUBNET_NAME="ipv6-subnet"
 PUBLIC_IPV4_NAME="public-ipv4"
-PUBLIC_IPV6_NAME="public-ipv6"
 NSG_NAME="ipv6_nsg"
 NIC_NAME="ipv6_nic"
 IPV6_CONFIG="ipv6_config"
