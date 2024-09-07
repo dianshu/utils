@@ -29,6 +29,6 @@ sb add rh2
 sb del reality
 
 # auto restart vm weekly
-# 0 2 * * 0 /sbin/shutdown -r now
+0 2 * * 0 /sbin/shutdown -r now
 crontab -e
 ```
