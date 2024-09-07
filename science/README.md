@@ -13,6 +13,9 @@
 ## Setup
 [233boy/v2ray](https://github.com/233boy/v2ray)
 ```bash
+# create vm
+bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/create_vm_for_science.sh)
+
 # install v2ray
 bash <(wget -qO- -o- https://git.io/v2ray.sh)
 

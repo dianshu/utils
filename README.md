@@ -29,22 +29,6 @@
 
 ### 用途
 初始化 Ubuntu 的 distcc 和 ccache，用于加速编译
-
-## science
-
-### 用途
-科学
-
-### 依赖
-1. az-cli
-
-### 用法
-1. Create a vm
-    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/create_vm_for_science.sh)`
-2. Install software in vm
-    - `bash <(curl -sL https://raw.githubusercontent.com/hiifeng/v2ray/main/install_v2ray.sh)`
-3. Update or init domain
-    - `bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/update_or_init_domain.sh)`
   
 ## xiaohongshu
 
