@@ -2,7 +2,7 @@
 ## Software router
 1. System: iStore
 2. IP: 192.168.1.1
-3. Extension: PassWall
+3. Extension: [PassWall](https://github.com/xiaorouji/openwrt-passwall/releases)
 
 ## Domain provider
 [Namsilo](https://www.namesilo.com/domain/search-domains)
@@ -11,7 +11,8 @@
 [v2rayNG](https://github.com/2dust/v2rayNG)
 
 ## Setup
-[233boy/v2ray](https://github.com/233boy/v2ray)
+[233boy/v2ray](https://233boy.com/sing-box/sing-box-script/))
+
 ```bash
 # create vm
 bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/create_vm_for_science.sh)
