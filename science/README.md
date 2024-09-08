@@ -1,6 +1,6 @@
 # Info
 ## Software router
-1. System: iStore
+1. System: [iStore](https://www.istoreos.com/)
 2. IP: 192.168.1.1
 3. Extension: [PassWall](https://github.com/xiaorouji/openwrt-passwall/releases)
 
