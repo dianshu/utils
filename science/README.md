@@ -11,7 +11,7 @@
 [v2rayNG](https://github.com/2dust/v2rayNG)
 
 ## Setup
-[233boy/v2ray](https://233boy.com/sing-box/sing-box-script/))
+[233boy/v2ray](https://233boy.com/sing-box/sing-box-script/)
 
 ```bash
 # create vm
