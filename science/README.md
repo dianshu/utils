@@ -21,7 +21,7 @@ bash <(curl -sL https://raw.githubusercontent.com/dianshu/utils/science/master/c
 bash <(wget -qO- -o- https://github.com/233boy/sing-box/raw/main/install.sh)
 
 # enable bbr
-v2ray bbr
+sb bbr
 
 # enable VLESS-HTTP2-REALITY
 sb add rh2
