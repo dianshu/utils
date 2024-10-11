@@ -114,8 +114,8 @@ public_ip=`az vm create \
     --authentication-type password \
     --image $VM_IMAGE \
     --size Standard_D2ds_v5 \
-    --query "publicIpAddress"` \
-    --output tsv
+    --query "publicIpAddress" \
+    --output tsv`
 
 echo "Cmd to login: ssh $VM_USER@$public_ip"
 echo "password: $password"
