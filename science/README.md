@@ -6,7 +6,7 @@
 ## Extension
 [PassWall2](https://github.com/xiaorouji/openwrt-passwall2/releases)
 
-### Seup
+### Setup
 
 #### Download ipk files
 - luci-23.05_luci-app-passwall2_{latest version}_all.ipk
@@ -35,6 +35,9 @@ opkg install luci-23.05_luci-app-passwall2_{latest version}_all.ipk
 # install language pack
 luci-23.05_luci-i18n-passwall2-zh-cn_git_{latest version}_all.ipk
 ```
+
+### Configure
+[PassWall2 完美配置](https://burgess-t.cn:35006/index.php/2024/07/30/617.html)
 
 ## Domain provider
 [Namsilo](https://www.namesilo.com/domain/search-domains)
